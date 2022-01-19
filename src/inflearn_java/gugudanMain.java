@@ -2,19 +2,10 @@ package inflearn_java;
 
 import java.util.Scanner;
 
+public class gugudanMain {
 
-public class Main {
-
-	static void gugu(int N, int arr[]) {
-		
-		for(int i = 0; i<arr.length; i++) {
-			arr[i] = N * (i+1);
-			System.out.println(arr[i]);
-		}
-		
-	}
-	
 	public static void main(String[] args) {
+		
 		
 		Scanner scanner = new Scanner(System.in);
 		
@@ -23,6 +14,7 @@ public class Main {
 		int[] arr = new int[9];
 		
 		Main.gugu(N, arr);
-		
+
 	}
+
 }
