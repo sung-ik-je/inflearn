@@ -12,7 +12,9 @@ public class Main {
 
 		int N =  scanner.nextInt();
 		
-		switch(N) {
+		for(int i = 0; i<N; i++) {
+			int A =  scanner.nextInt();
+			switch(A) {
 			case 1:
 			case 3:
 			case 5:
@@ -28,18 +30,12 @@ public class Main {
 			case 11:
 				System.out.println("30");
 				break;
-			case 2 :
+			default :
 				System.out.println("28 or 29");
 				break;
-				
-		
-		
+			}
+			
 		}
-
 	}
 }
-
-
-//1,0
-//8,7
 
