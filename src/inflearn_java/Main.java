@@ -4,25 +4,42 @@ import java.util.Scanner;
 
 
 public class Main {
-
-	static void gugu(int N, int arr[]) {
-		
-		for(int i = 0; i<arr.length; i++) {
-			arr[i] = N * (i+1);
-			System.out.println(arr[i]);
-		}
-		
-	}
 	
 	public static void main(String[] args) {
 		
-		Scanner scanner = new Scanner(System.in);
 		
+		Scanner scanner = new Scanner(System.in);
+
 		int N =  scanner.nextInt();
 		
-		int[] arr = new int[9];
+		switch(N) {
+			case 1:
+			case 3:
+			case 5:
+			case 7:
+			case 8:
+			case 10:
+			case 12 :
+				System.out.println("31");
+				break;
+			case 4:
+			case 6:
+			case 9:
+			case 11:
+				System.out.println("30");
+				break;
+			case 2 :
+				System.out.println("28 or 29");
+				break;
+				
 		
-		Main.gugu(N, arr);
 		
+		}
+
 	}
 }
+
+
+//1,0
+//8,7
+
