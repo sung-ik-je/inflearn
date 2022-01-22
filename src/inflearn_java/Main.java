@@ -7,17 +7,21 @@ import java.util.HashMap;
 
 public class Main {
 	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		HashMap<String, String> map = new HashMap<String, String>();
-		
+		menu();
+		menu_choice();
+	}
+	public static void menu() {
 		System.out.println("+----------------------+");
 		System.out.println("| 1. 일정 등록");
 		System.out.println("| 2. 일정 검색");
 		System.out.println("| 3. 달력 보기");
 		System.out.println("| h. 도움말 q. 종료");
 		System.out.println("+----------------------+");
+	}
+	public static void menu_choice() throws IOException  {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		HashMap<String, String> map = new HashMap<String, String>();
 		String N;
-		
 		do {
 			System.out.println("명령 (1, 2, 3, h, q)");
 			System.out.print(">");
@@ -65,7 +69,6 @@ public class Main {
 			}
 		}while(!N.equals("q"));
 		System.out.println("Bye");
-		
 	}
 }
 
