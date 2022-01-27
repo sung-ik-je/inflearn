@@ -8,12 +8,12 @@ import java.util.HashMap;
 
 public class Main {
 	public static void main(String[] args) throws IOException {
-		menu();
+		printMenu();
 		menu_choice();
 	}
 	
 	
-	public static void menu() {
+	public static void printMenu() {
 		System.out.println("+----------------------+");
 		System.out.println("| 1. 일정 등록");
 		System.out.println("| 2. 일정 검색");
@@ -66,12 +66,7 @@ public class Main {
 				
 			}
 			else if(N.equals("h")) {
-				System.out.println("+----------------------+");
-				System.out.println("| 1. 일정 등록");
-				System.out.println("| 2. 일정 검색");
-				System.out.println("| 3. 달력 보기");
-				System.out.println("| h. 도움말 q. 종료");
-				System.out.println("+----------------------+");
+				printMenu();
 			}
 		}while(!N.equals("q"));
 		System.out.println("Bye");
@@ -132,26 +127,50 @@ public class Main {
 		date.set(Integer.parseInt(year), Integer.parseInt(month)-1, 1);
 		int weekday = date.get(Calendar.DAY_OF_WEEK);
 		
-		if(weekday == 1) {
+//		if(weekday == 1) {
+//			count = 0;
+//		}
+//		else if(weekday == 2) {
+//			count = 1;
+//		}
+//		else if(weekday == 3){
+//			count = 2;
+//		}
+//		else if(weekday == 4){
+//			count = 3;
+//		}
+//		else if(weekday == 5){
+//			count = 4;
+//		}
+//		else if(weekday == 6){
+//			count = 5;
+//		}
+//		else if(weekday == 7) {
+//			count = 6;
+//		}
+		
+		switch(weekday) {
+		case 1:
 			count = 0;
-		}
-		else if(weekday == 2) {
+			break;
+		case 2:
 			count = 1;
-		}
-		else if(weekday == 3){
+			break;
+		case 3:
 			count = 2;
-		}
-		else if(weekday == 4){
+			break;
+		case 4:
 			count = 3;
-		}
-		else if(weekday == 5){
+			break;
+		case 5:
 			count = 4;
-		}
-		else if(weekday == 6){
+			break;
+		case 6:
 			count = 5;
-		}
-		else if(weekday == 7) {
+			break;
+		case 7:
 			count = 6;
+			break;
 		}
 		
 		System.out.println("SU MO TU WE TH FR SA");
