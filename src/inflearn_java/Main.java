@@ -3,6 +3,7 @@ package inflearn_java;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Calendar;
 import java.util.HashMap;
 
 public class Main {
@@ -60,12 +61,7 @@ public class Main {
 				System.out.println("달을 입력하세요");
 				System.out.print("MONTH>");
 				String month = br.readLine();
-				System.out.println("첫번째 요일을 입력하세요.(SU, MO, WE, TH, FR, SA)");
-				System.out.print("WEEKDAY>");
-				String weekday = br.readLine();
-				
-				
-				findleapyear(year, month,weekday);
+				findleapyear(year, month);
 				
 				
 			}
@@ -80,7 +76,7 @@ public class Main {
 		}while(!N.equals("q"));
 		System.out.println("Bye");
 	}
-	static void findleapyear(String year, String month,String weekday) {
+	static void findleapyear(String year, String month) {
 		
 		int lastday = 0;
 		int number = Integer.parseInt(month);
@@ -120,36 +116,41 @@ public class Main {
 				break;
 			}
 		}
-		findcal(year, month, weekday,lastday);
+		findcal(year, month, lastday);
 	}
 	
 	
-	static void findcal(String year, String month, String weekday, int lastday) {
+	static void findcal(String year, String month, int lastday) {
 		
 		int count = 0;
 		int start = 0;
 		int line = 0;
+		Calendar date = Calendar.getInstance(); 
+		
 		System.out.println("<"+year+"년  "+ month + "월>");
 		
-		if(weekday.equals("SU")) {
+		date.set(Integer.parseInt(year), Integer.parseInt(month)-1, 1);
+		int weekday = date.get(Calendar.DAY_OF_WEEK);
+		
+		if(weekday == 1) {
 			count = 0;
 		}
-		else if(weekday.equals("MO")) {
+		else if(weekday == 2) {
 			count = 1;
 		}
-		else if(weekday.equals("TU")) {
+		else if(weekday == 3){
 			count = 2;
 		}
-		else if(weekday.equals("WE")) {
+		else if(weekday == 4){
 			count = 3;
 		}
-		else if(weekday.equals("TH")) {
+		else if(weekday == 5){
 			count = 4;
 		}
-		else if(weekday.equals("FR")) {
+		else if(weekday == 6){
 			count = 5;
 		}
-		else if(weekday.equals("SA")) {
+		else if(weekday == 7) {
 			count = 6;
 		}
 		
@@ -178,7 +179,7 @@ public class Main {
 				
 			}
 		}
-		//System.out.println();
+		System.out.println();
 	}
 }
 
