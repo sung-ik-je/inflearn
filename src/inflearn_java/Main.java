@@ -98,12 +98,10 @@ public class Main {
 				}
 			}
 			else {
-				System.out.println("===4");
 				lastday = 28;
 			}
 		}
 		else {
-			System.out.println("===5");
 			switch(number){
 			case 1:
 			case 3:
