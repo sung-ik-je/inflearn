@@ -31,7 +31,46 @@ public class Main {
 			System.out.println("명령 (1, 2, 3, h, q)");
 			System.out.print(">");
 			N = br.readLine();
-			if(N.equals("1")) {
+			
+//			if(N.equals("1")) {
+//				System.out.println("[일정 등록] 날짜를 입력하세요.");
+//				System.out.print(">");
+//				String day = br.readLine();
+//				System.out.println("일정을 입력하세요");
+//				System.out.print(">");
+//				String work = br.readLine();
+//				map.put(day, work);
+//				System.out.println("일정이 등록되었습니다");
+//			}
+//			else if(N.equals("2")) {
+//				System.out.println("[일정 검색] 날짜를 입력하세요");
+//				System.out.print(">");
+//				String checkday = br.readLine();
+//				if(map.containsKey(checkday)) {
+//					System.out.println("1개의 일정이 있습니다");
+//					System.out.println(map.get(checkday));
+//				}
+//				else {
+//					System.out.println("일정이 존재하지 않습니다");
+//				}
+//				
+//			}
+//			else if(N.equals("3")) {
+//				System.out.println("년도를 입력해주세요");
+//				System.out.print("YEAR>");
+//				String year = br.readLine();
+//				System.out.println("달을 입력하세요");
+//				System.out.print("MONTH>");
+//				String month = br.readLine();
+//				findleapyear(year, month);
+//				
+//				
+//			}
+//			else if(N.equals("h")) {
+//				printMenu();
+//			}
+			switch(N) {
+			case "1":
 				System.out.println("[일정 등록] 날짜를 입력하세요.");
 				System.out.print(">");
 				String day = br.readLine();
@@ -40,8 +79,8 @@ public class Main {
 				String work = br.readLine();
 				map.put(day, work);
 				System.out.println("일정이 등록되었습니다");
-			}
-			else if(N.equals("2")) {
+				break;
+			case "2":
 				System.out.println("[일정 검색] 날짜를 입력하세요");
 				System.out.print(">");
 				String checkday = br.readLine();
@@ -52,9 +91,8 @@ public class Main {
 				else {
 					System.out.println("일정이 존재하지 않습니다");
 				}
-				
-			}
-			else if(N.equals("3")) {
+				break;
+			case "3":
 				System.out.println("년도를 입력해주세요");
 				System.out.print("YEAR>");
 				String year = br.readLine();
@@ -62,12 +100,13 @@ public class Main {
 				System.out.print("MONTH>");
 				String month = br.readLine();
 				findleapyear(year, month);
-				
-				
-			}
-			else if(N.equals("h")) {
+				break;
+			case "h":
 				printMenu();
+				break;
 			}
+			
+			
 		}while(!N.equals("q"));
 		System.out.println("Bye");
 	}
@@ -126,28 +165,7 @@ public class Main {
 		
 		date.set(Integer.parseInt(year), Integer.parseInt(month)-1, 1);
 		int weekday = date.get(Calendar.DAY_OF_WEEK);
-		
-//		if(weekday == 1) {
-//			count = 0;
-//		}
-//		else if(weekday == 2) {
-//			count = 1;
-//		}
-//		else if(weekday == 3){
-//			count = 2;
-//		}
-//		else if(weekday == 4){
-//			count = 3;
-//		}
-//		else if(weekday == 5){
-//			count = 4;
-//		}
-//		else if(weekday == 6){
-//			count = 5;
-//		}
-//		else if(weekday == 7) {
-//			count = 6;
-//		}
+
 		
 		switch(weekday) {
 		case 1:
