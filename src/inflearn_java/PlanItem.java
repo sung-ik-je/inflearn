@@ -27,13 +27,12 @@ public class PlanItem {
 	//메뉴 선택 알고리즘
 	public static void menu_choice() throws IOException  {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		HashMap<String, String> map = new HashMap<String, String>();
+		//HashMap<String, String> map = new HashMap<String, String>();
 		String N;
 		do {
 			System.out.println("명령 (1, 2, 3, h, q)");
 			System.out.print(">");
 			N = br.readLine();
-			
 			switch(N) {
 			case "1":
 				System.out.println("[일정 등록] 날짜를 입력하세요.");
@@ -42,20 +41,26 @@ public class PlanItem {
 				System.out.println("일정을 입력하세요");
 				System.out.print(">");
 				String work = br.readLine();
-				map.put(day, work);
+				//file i/o(day - 파일명, work - 파일데이터로)
+				AboutFile.main(day,work);
+				//map.put(day, work);
 				System.out.println("일정이 등록되었습니다");
 				break;
 			case "2":
 				System.out.println("[일정 검색] 날짜를 입력하세요");
 				System.out.print(">");
 				String checkday = br.readLine();
-				if(map.containsKey(checkday)) {
-					System.out.println("1개의 일정이 있습니다");
-					System.out.println(map.get(checkday));
-				}
-				else {
-					System.out.println("일정이 존재하지 않습니다");
-				}
+				
+				//file에 day(파일명) 존재한다면 일정출력
+				//없으면 존재하지 않습니다
+				AboutFile.findDay(checkday);
+//				if(map.containsKey(checkday)) {
+//					System.out.println("1개의 일정이 있습니다");
+//					System.out.println(map.get(checkday));
+//				}
+//				else {
+//					System.out.println("일정이 존재하지 않습니다");
+//				}
 				break;
 			case "3":
 				System.out.println("년도를 입력해주세요");

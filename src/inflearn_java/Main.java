@@ -51,7 +51,6 @@ public class Main {
 		findcal(year, month, lastday);
 	}
 	
-	
 	//달력 찾는 알고리즘
 	static void findcal(String year, String month, int lastday) {
 		
@@ -118,4 +117,3 @@ public class Main {
 		System.out.println();
 	}
 }
-
